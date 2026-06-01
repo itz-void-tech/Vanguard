@@ -90,12 +90,23 @@ graph TD
     end
     style ESP3 fill:#1c1917,stroke:#ef4444,stroke-width:1px,color:#fff;
 
+    %% Raspberry Pi Node
+    subgraph RPi [Raspberry Pi - Video Streamer]
+        direction TB
+        PiOS[Raspberry Pi OS]
+        CSICam[CSI Night Vision Camera]
+        RTSPSrv[RTSP Stream Server]
+    end
+    style RPi fill:#1f1625,stroke:#ec4899,stroke-width:1px,color:#fff;
+
     %% Connections
     ESP3 -- Telemetry & Fire Status --> Broker
     Broker -- Commands/Speed/Angles --> ESP1
     Broker -- Raw Telemetry Feed --> ESP2
     ESP2 -- Alerts / Geo-location --> TeleBot
     ESP2 -- Alert Backups --> Firebase
+    RPi -- Live RTSP Feed --> VLC[VLC Media Player]
+    RPi -- Dashboard Overlay (Custom IP) --> WebGCS[GCS Web Dashboard]
     
     classDef default fill:#111827,stroke:#374151,color:#f3f4f6;
 ```
@@ -177,6 +188,12 @@ Acts as the eyes and environmental analysis package of the rover.
 *   **Toxic Gas Signature**: Analyzes analog values from MQ2, MQ9, MQ135 to classify the current hazard state (e.g., Toxic Gas, Flammable Leak, Chemical VOC).
 *   **NEO-6M GPS Tracker**: Runs TinyGPS++ decoding on hardware UART2 to publish geo-location statistics.
 *   **Code Location**: [3esp.ino](ESP32_codes/3esp.ino)
+
+### 4. Raspberry Pi: Night Vision Streaming Node
+Acts as the eyes of the rover in absolute darkness, streaming high-definition optical data back to control stations.
+*   **Night Vision Imaging**: Utilizes an infrared-cut (IR-Cut) Night Vision CSI Camera module with auxiliary infrared LED illuminators.
+*   **High-Efficiency RTSP Server**: Streams raw camera feed over a lightweight RTSP server running on Raspberry Pi OS.
+*   **Multi-Platform Monitoring**: Allows real-time viewing of the search-and-rescue stream inside **VLC Media Player** or embedded inside the **GCS Web Dashboard Cockpit** by entering the Raspberry Pi's custom local IP address.
 
 ---
 
@@ -273,6 +290,7 @@ The main control interface is a beautifully designed, cyberpunk slate-themed Gro
 *   **Mapping Engine**: Renders a live **Leaflet.js Map** using OpenStreetMap tiles. It automatically centers on the rover's GPS coordinates and draws a telemetry path trace.
 *   **Sensor Gauge Panels**: Formats DHT11 and MQ-gas readings on dynamic cards, lighting up in vibrant red if status transitions to `DANGER`.
 *   **Manual Override controls**: Provides immediate sliders to control the 4-axis robotic arm, pan-tilt gimbal servos, and driving speed.
+*   **Custom Video Integration**: Connects to the **Raspberry Pi RTSP Night Vision feed** using a custom stream input IP address field in the dashboard, updating the live optical panel instantly.
 
 ---
 

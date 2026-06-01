@@ -50,7 +50,8 @@ The robot splits its operational payload among three ESP32 microcontrollers to e
 ```mermaid
 graph TD
     %% MQTT Broker
-    Broker[HiveMQ MQTT Broker] style Broker fill:#8b5cf6,stroke:#fff,stroke-width:2px,color:#fff;
+    Broker[HiveMQ MQTT Broker]
+    style Broker fill:#8b5cf6,stroke:#fff,stroke-width:2px,color:#fff;
     
     %% ESP Node 1
     subgraph ESP1 [ESP32 - Control & Actuation]
@@ -308,8 +309,8 @@ Thanks to the modularity of the **distributed 3-ESP32 architecture** and the rob
 
 ## 👥 Contributors
 
-*   **Team Lead & Core Firmware Engineer**: Swarnadeep (Swarn)
-*   **Electronics Specialist & Hardware Wireman**: ZYRO Team Partner
-*   **Design & UI UX Engineer**: ZYRO Team Partner
+*   **Team Lead & Core Firmware Engineer**: Swarnendu Kundu (ItzVoidTech)
+*   **Linux Member**: Baibhab Das (ElectroBai)
+*   **Designing Partner**: Ayush Shukla (AyushShukla1508)
 
 *Feel free to star ⭐ this repository if you found this disaster rover system useful!*

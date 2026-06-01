@@ -102,6 +102,33 @@ graph TD
 
 ---
 
+## 📸 System Gallery & UI Showcase
+
+### 1. Ground Control Station Cockpit
+The custom Ground Control Station portal starts with a boot loader sequence terminal and opens into a full telemetry control panel:
+
+<p align="center">
+  <img src="images/loading%20page.png" width="48%" alt="GCS Boot Terminal Screen" />
+  <img src="images/dashboard.png" width="48%" alt="GCS Main Dashboard Cockpit" />
+</p>
+
+### 2. Live GPS Geolocation Mapping
+The GCS integrates a Leaflet JS map that visualizes live coordinates and paths taken by the rover:
+
+<p align="center">
+  <img src="images/map.png" width="90%" alt="Leaflet JS Live Tracking Map" />
+</p>
+
+### 3. Database & Cloud Blackbox Logs
+Telemetry logs are saved locally to the ESP2 SD Card Reader, and emergency alert payloads are backed up to the Firebase cloud:
+
+<p align="center">
+  <img src="images/database.png" width="48%" alt="SD Card Local Logs Output" />
+  <img src="images/firebase-page.png" width="48%" alt="Firebase Realtime Database Logs" />
+</p>
+
+---
+
 ## 📟 ESP32 Subsystem Breakdown
 
 ### 1. ESP1: Drive Control & Sirens Node

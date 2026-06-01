@@ -2,7 +2,7 @@
 
 <div align="center">
   
-  ![Rover Concept Banner](images/disaster_rover_concept.png)
+  ![Disaster Rover Banner](images/rover.jpeg)
   
   [![Hackathon](https://img.shields.io/badge/Hackathon-ZYRO%202026-blueviolet?style=for-the-badge&logo=eventbrite)](https://github.com/)
   [![Award](https://img.shields.io/badge/Award-🥇%20Best%20Beginners%20Team-gold?style=for-the-badge&logo=award)](https://github.com/)
@@ -104,7 +104,14 @@ graph TD
 
 ## 📸 System Gallery & UI Showcase
 
-### 1. Ground Control Station Cockpit
+### 1. Physical Rover Hardware
+The custom physical chassis of the Disaster Scouting & Rescue Rover:
+
+<p align="center">
+  <img src="images/rover.jpeg" width="60%" alt="Disaster Rover Physical Robot" />
+</p>
+
+### 2. Ground Control Station Cockpit
 The custom Ground Control Station portal starts with a boot loader sequence terminal and opens into a full telemetry control panel:
 
 <p align="center">
@@ -112,19 +119,33 @@ The custom Ground Control Station portal starts with a boot loader sequence term
   <img src="images/dashboard.png" width="48%" alt="GCS Main Dashboard Cockpit" />
 </p>
 
-### 2. Live GPS Geolocation Mapping
+### 3. Live GPS Geolocation Mapping
 The GCS integrates a Leaflet JS map that visualizes live coordinates and paths taken by the rover:
 
 <p align="center">
   <img src="images/map.png" width="90%" alt="Leaflet JS Live Tracking Map" />
 </p>
 
-### 3. Database & Cloud Blackbox Logs
+### 4. Telegram GCS Bot Command Center
+A dedicated bot that allows engineers to query telemetry, fetch Google Maps paths, and command emergency overrides:
+
+<p align="center">
+  <img src="images/telegram.jpeg" width="300" alt="Telegram GCS Bot View" />
+</p>
+
+### 5. Database & Cloud Blackbox Logs
 Telemetry logs are saved locally to the ESP2 SD Card Reader, and emergency alert payloads are backed up to the Firebase cloud:
 
 <p align="center">
   <img src="images/database.png" width="48%" alt="SD Card Local Logs Output" />
   <img src="images/firebase-page.png" width="48%" alt="Firebase Realtime Database Logs" />
+</p>
+
+### 6. ZYRO Hackathon Team (Disaster techies)
+The "Best Beginners Team" at Kalyani Government Engineering College celebrating the ZYRO Hackathon award:
+
+<p align="center">
+  <img src="images/team.jpeg" width="60%" alt="Best Beginners Team Award Winners" />
 </p>
 
 ---
@@ -263,6 +284,10 @@ The universal Telegram bot provides a complete secondary command interface.
   <img src="https://img.shields.io/badge/Telegram-Universal%20Bot-blue?style=for-the-badge&logo=telegram" alt="Telegram Badge"/>
 </div>
 
+<p align="center">
+  <img src="images/telegram.jpeg" width="350" alt="Telegram Bot Conversation View" />
+</p>
+
 ### Bot Father Integration Commands
 *   `/status` - Returns a Markdown summary of DHT11 metrics, gas concentrations, fire status, and active motor driving direction.
 *   `/location` - Decodes coordinate details and generates an instant click-to-open **Google Maps tracking link**.
@@ -331,6 +356,10 @@ Thanks to the modularity of the **distributed 3-ESP32 architecture** and the rob
 *   The innovative division of labor across multiple microcontrollers.
 *   The inclusion of a physical backup system (SD log) alongside live cloud storage (Firebase).
 *   The redundant control options (Web GCS + Telegram Bot).
+
+<p align="center">
+  <img src="images/team.jpeg" width="70%" alt="Best Beginners Team Award Winner Group Photo" />
+</p>
 
 ---
 

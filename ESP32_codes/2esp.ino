@@ -78,8 +78,8 @@ WebServer server(80);
 // TELEGRAM CONFIGURATION
 // ==========================================
 // Enter your details below after setting up with BotFather
-const char* botToken = "8343462985:AAH9UoSoi90KGlqNQV06ZG75cc704_NXdxY";
-const char* chatID   = "7901238515";
+const char* botToken = "YOU_BOT_TOKEN";
+const char* chatID   = "YOUR_CHAT_ID";
 
 WiFiClientSecure securedClient;
 UniversalTelegramBot bot(botToken, securedClient);
